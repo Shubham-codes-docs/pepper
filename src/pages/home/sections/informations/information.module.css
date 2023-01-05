@@ -2,6 +2,12 @@
   display: flex;
   margin-top: 140px;
   justify-content: space-around;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.info-container:nth-child(2) {
+  flex-direction: row-reverse;
 }
 
 .info-image {
@@ -14,4 +20,15 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 24px;
+}
+
+@media (max-width: 642px) {
+  .info-container {
+    flex-direction: column !important;
+  }
+
+  .info-image {
+    max-width: 19.743rem;
+    max-height: 17.533rem;
+  }
 }

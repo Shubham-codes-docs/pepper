@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Brands from "./Brands";
 import About from "./sections/about/Index";
 import Features from "./sections/features/Index";
@@ -8,8 +8,20 @@ import Branding from "./sections/branding/Index";
 import { Stack, Container, Typography, Button } from "@mui/material";
 import classes from "./home.module.css";
 import hero from "../../assets/hero-home.jpg";
+import hero1 from "../../assets/hero-mobile.jpg";
 
 const Index = () => {
+  const [screenSize, setScreenSize] = useState(undefined);
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div className={classes.hero}>
@@ -39,6 +51,7 @@ const Index = () => {
                 padding: "18px 32px",
                 marginTop: "40.59px",
                 marginBottom: "60px",
+                backgroundColor: "#9D0AFF",
               }}
               variant="contained"
             >
@@ -46,8 +59,12 @@ const Index = () => {
             </Button>
           </Stack>
         </Container>
-        <div className={classes["hero-image"]}>
-          <img src={hero} alt="hero-img" />
+        <div>
+          <img
+            src={screenSize < 1500 ? hero1 : hero}
+            alt="hero-img"
+            className={classes["hero-image"]}
+          />
         </div>
       </div>
       <Brands />

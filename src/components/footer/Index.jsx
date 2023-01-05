@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Stack, Typography, Button } from "@mui/material";
 import { LinkedIn, Twitter, Mail } from "@mui/icons-material";
 import classes from "./footer.module.css";
 
 const Index = () => {
+  const [screenSize, setScreenSize] = useState(undefined);
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <footer>
-      <Stack direction="row" justifyContent="space-between">
+      <Stack
+        direction={screenSize < 1500 ? "column" : "row"}
+        justifyContent="space-between"
+      >
         <Stack alignItems="flex-start">
           <div className="brand">
             <Stack
@@ -45,7 +59,10 @@ const Index = () => {
           >
             Get Started
           </Button>
-          <div className="social-media" style={{ marginTop: "25px" }}>
+          <div
+            className={classes["social-media"]}
+            style={{ marginTop: "25px" }}
+          >
             <Stack direction="row" gap={2}>
               <LinkedIn sx={{ color: "#fff" }} />
               <Twitter sx={{ color: "#fff" }} />

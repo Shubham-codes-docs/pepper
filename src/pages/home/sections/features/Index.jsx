@@ -82,7 +82,7 @@ const Index = () => {
       <Container>
         <div className={classes["feature-card-container"]}>
           {data.map((d) => {
-            return <FeatureCard details={d} />;
+            return <FeatureCard details={d} key={d.id} />;
           })}
         </div>
       </Container>

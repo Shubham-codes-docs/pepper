@@ -20,8 +20,42 @@ nav {
   font-size: 0.875rem;
   font-weight: 400;
   margin-left: 0.875rem;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: #9d0aff;
 }
 
 .highlight {
   color: #9d0aff;
+}
+
+.toggle-btn {
+  display: none;
+}
+
+@media (max-width: 642px) {
+  .toggle-btn {
+    display: inline-block;
+  }
+
+  .menu {
+    display: none;
+    order: 3;
+  }
+
+  .buttons {
+    display: none;
+  }
+
+  .menu-list {
+    text-align: center;
+    order: 3;
+  }
+
+  .menu-item {
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
 }

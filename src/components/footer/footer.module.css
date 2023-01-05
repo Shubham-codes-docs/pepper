@@ -32,3 +32,17 @@ footer {
   color: #fffaff;
   margin-bottom: 12px;
 }
+
+@media (max-width: 642px) {
+  footer {
+    padding: 60px 20px;
+  }
+
+  .social-media {
+    margin-bottom: 59px;
+  }
+
+  .pages:nth-child(2) {
+    margin-bottom: 160px;
+  }
+}

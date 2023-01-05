@@ -25,9 +25,37 @@
   position: relative;
 }
 
+.brand-text {
+  margin-right: 180px;
+}
+
 .controls {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 18px 38.2812px 17.7969px 32px;
+}
+
+@media (max-width: 642px) {
+  .brand-container {
+    flex-direction: column;
+  }
+
+  .brand-text {
+    margin-right: 0;
+  }
+
+  .button-control {
+    margin-bottom: 60px !important;
+  }
+
+  .main-brand-container {
+    width: 18.938rem !important;
+    height: 45.848rem !important;
+    padding: 82px 30px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
 }

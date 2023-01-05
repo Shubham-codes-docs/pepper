@@ -3,6 +3,6 @@
   margin-bottom: 125px;
 }
 
-/* .hero-image {
-  margin-left: -90px;
-} */
+.hero-image {
+  object-fit: contain;
+}

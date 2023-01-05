@@ -99,10 +99,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div
-        className={classes["info-container"]}
-        style={{ flexDirection: "row-reverse" }}
-      >
+      <div className={classes["info-container"]}>
         <div className="image">
           <img src={info2} alt="info2" className={classes["info-image"]} />
         </div>

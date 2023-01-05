@@ -4,3 +4,9 @@
   gap: 40px;
   margin-top: 60.59px;
 }
+
+@media (max-width: 642px) {
+  .feature-card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -35,10 +35,13 @@ const Index = () => {
     <>
       <Container sx={{ marginTop: "231px" }}>
         <div className={classes["brand-container"]}>
-          <div className="brand-text" style={{ marginRight: "180px" }}>
+          <div
+            className={classes["brand-text"]}
+            style={{ width: "100%", textAlign: "center" }}
+          >
             <Typography
               variant="h1"
-              sx={{ font: "700 3rem/4.2rem Plus Jakarta Sans", width: "100%" }}
+              sx={{ font: "700 3rem/4.2rem Plus Jakarta Sans" }}
             >
               Build a powerful website for your startup.
             </Typography>
@@ -53,14 +56,16 @@ const Index = () => {
                 padding: "18px 32px",
                 borderRadius: "18px",
                 marginTop: "41px",
+                backgroundColor: "#9D0AFF",
               }}
+              className={classes["button-control"]}
             >
               Read More
             </Button>
           </div>
           <div
             className={classes["main-cards"]}
-            style={{ marginRight: "40px" }}
+            style={{ marginRight: "40px", marginBottom: "40px" }}
           >
             <div style={{ marginBottom: "40px" }}>
               <FeatureCard

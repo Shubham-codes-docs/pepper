@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Numbers from "./Numbers";
 import Features from "./Features";
 import { Stack, Typography, Divider } from "@mui/material";
@@ -25,6 +25,17 @@ const data = [
 ];
 
 const Index = () => {
+  const [screenSize, setScreenSize] = useState(undefined);
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <Stack alignItems="center" sx={{ marginBottom: "159.59px" }}>
@@ -46,7 +57,7 @@ const Index = () => {
             <br /> Suspendisse varius enim in eros elementum tristique.
           </Typography>
           <Stack
-            direction="row"
+            direction={screenSize < 1500 ? "column" : "row"}
             divider={
               <Divider orientation="vertical" variant="middle" flexItem />
             }

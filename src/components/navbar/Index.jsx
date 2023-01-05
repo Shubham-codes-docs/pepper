@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { Stack, Button } from "@mui/material";
 import classes from "./nav.module.css";
 import svg from "../../assets/svg.svg";
 
 const Index = () => {
+  const [screenSize, setScreenSize] = useState(undefined);
+  const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setScreenSize(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const menuToggler = () => {
+    setShowMenu((prevState) => !prevState);
+  };
+
   return (
     <nav>
       <Stack
         direction="row"
         alignItems="center"
         justifyContent="space-around"
-        sx={{ width: "100%" }}
+        sx={{ width: "100%", flexWrap: "wrap" }}
       >
         <div className="brand">
           <Stack
@@ -26,9 +43,20 @@ const Index = () => {
             <h1 className="brand-name">Pepper</h1>
           </Stack>
         </div>
-        <div className="menu">
+        <div
+          className={classes["menu"]}
+          style={{
+            display:
+              screenSize > 1500 ? "inherit" : showMenu ? "inherit" : "none",
+          }}
+        >
           <ul className="menu-list">
-            <Stack direction="row">
+            <Stack
+              direction={screenSize <= 1500 ? "column" : "row"}
+              alignItems="center"
+              justifyContent="center"
+              sx={{ textAlign: "center" }}
+            >
               <li className={classes["menu-item"]}>About</li>
               <li className={classes["menu-item"]}>Blog</li>
               <li className={classes["menu-item"]}>Pricing</li>
@@ -47,19 +75,33 @@ const Index = () => {
                 Cart
               </span>
             </div>
-            <div className={`${classes.logo} ${classes["toggle-btn"]}`}>
+            <div
+              className={`${classes.logo} ${classes["toggle-btn"]}`}
+              onClick={menuToggler}
+            >
               <div></div>
               <div></div>
               <div></div>
             </div>
-            <div className="buttons">
+            <div className={classes["buttons"]}>
               <Stack direction="row" spacing={2}>
-                <Button variant="outlined" sx={{ borderRadius: "10px" }}>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    borderRadius: "10px",
+                    borderColor: " #9d0aff",
+                    color: " #9d0aff",
+                  }}
+                >
                   Login
                 </Button>
                 <Button
                   variant="contained"
-                  sx={{ borderRadius: "16px", padding: "14px 25px" }}
+                  sx={{
+                    borderRadius: "16px",
+                    padding: "14px 25px",
+                    backgroundColor: "#9d0aff",
+                  }}
                 >
                   Get Started
                 </Button>
