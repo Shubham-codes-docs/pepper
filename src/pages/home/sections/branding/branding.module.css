@@ -1,0 +1,33 @@
+.brand-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.main-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.main-brand-container {
+  background-color: #151531;
+  border-radius: 32px;
+  text-align: center;
+  margin-top: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 100px 301.3px;
+  position: relative;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 18px 38.2812px 17.7969px 32px;
+}

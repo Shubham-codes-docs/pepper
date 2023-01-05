@@ -1,0 +1,6 @@
+.feature-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60.59px;
+}

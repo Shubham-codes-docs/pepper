@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+}
+
+.logo {
+  background-color: #9d0aff;
+  text-align: center;
+  border-radius: 16px;
+  padding: 14px 25px;
+}
+.logo div {
+  width: 13.33px;
+  height: 4.44px;
+  background-color: #fffaff;
+  margin: 6px 0;
+}
+
+.menu-item {
+  font-family: "Inter";
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-left: 0.875rem;
+}
+
+.highlight {
+  color: #9d0aff;
+}

@@ -1,0 +1,17 @@
+.info-container {
+  display: flex;
+  margin-top: 140px;
+  justify-content: space-around;
+}
+
+.info-image {
+  max-width: 33.75rem;
+  max-height: 29.995rem;
+}
+
+.list-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 24px;
+}

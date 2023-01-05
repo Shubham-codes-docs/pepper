@@ -1,0 +1,15 @@
+.about-container {
+  background-color: rgba(21, 21, 49, 1);
+  border-radius: 32px;
+  padding: 80px 240px;
+  text-align: center;
+  margin-top: 100px;
+  color: rgb(255, 250, 255);
+  position: relative;
+}
+
+.image-1 {
+  position: absolute;
+  top: 32.35px;
+  left: -4.16px;
+}
